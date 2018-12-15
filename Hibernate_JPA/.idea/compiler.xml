@@ -6,11 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Associations_ManyToMany" />
+        <module name="Associations_OneToMany" />
+        <module name="Associations_OneToOne" />
+        <module name="Hibernate_Join_Fetch" />
         <module name="Hibernate_JPA" />
+        <module name="Hibernate_LazyLoading" />
+        <module name="IntroHibernate" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Associations_ManyToMany" target="1.7" />
+      <module name="Associations_OneToMany" target="1.7" />
+      <module name="Associations_OneToOne" target="1.7" />
+      <module name="Hibernate_Join_Fetch" target="1.8" />
       <module name="Hibernate_JPA" target="1.7" />
+      <module name="Hibernate_LazyLoading" target="1.8" />
+      <module name="IntroHibernate" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

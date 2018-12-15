@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Associations_ManyToMany/Associations_ManyToMany.iml" filepath="$PROJECT_DIR$/../Associations_ManyToMany/Associations_ManyToMany.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Associations_OneToMany/Associations_OneToMany.iml" filepath="$PROJECT_DIR$/../Associations_OneToMany/Associations_OneToMany.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Associations_OneToOne/Associations_OneToOne.iml" filepath="$PROJECT_DIR$/../Associations_OneToOne/Associations_OneToOne.iml" />
       <module fileurl="file://$PROJECT_DIR$/Hibernate_JPA.iml" filepath="$PROJECT_DIR$/Hibernate_JPA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Hibernate_Join_Fetch/Hibernate_Join_Fetch.iml" filepath="$PROJECT_DIR$/../Hibernate_Join_Fetch/Hibernate_Join_Fetch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Hibernate_LazyLoading/Hibernate_LazyLoading.iml" filepath="$PROJECT_DIR$/../Hibernate_LazyLoading/Hibernate_LazyLoading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../IntroHibernate/IntroHibernate.iml" filepath="$PROJECT_DIR$/../IntroHibernate/IntroHibernate.iml" />
     </modules>
   </component>
 </project>
