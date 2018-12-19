@@ -44,6 +44,7 @@ public class CommandeServiceImpl implements ICommandeService {
         return result;
     }
 
+    @Transactional
     public void validerPanier(String idPanier,String idClient){
         Panier panierAValider=panierRepository.findById(idPanier).get();
         Client client= clientRepository.findById(idClient).get();

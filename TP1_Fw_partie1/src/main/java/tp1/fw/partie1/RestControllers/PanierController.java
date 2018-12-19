@@ -39,6 +39,11 @@ public class PanierController {
 
     }
 
+    /**
+     * Permet de retourner le panier d'un visiteur bien déterminé
+     * @param idClient Idenifiant du visiteur
+     * @return Retourne un Panier
+     */
     @GetMapping(value="/visiteur/{idClient}")
     public ResponseEntity<Panier> getPanierByClientId(@PathVariable String idClient){
 

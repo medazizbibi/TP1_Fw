@@ -9,6 +9,7 @@ import tp1.fw.partie1.Domain.*;
 import tp1.fw.partie1.Repositories.*;
 import tp1.fw.partie1.Services.Interfaces.IPanierService;
 
+import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.UUID;
 
@@ -29,6 +30,14 @@ public class PanierServiceImpl implements IPanierService {
     @Autowired
     Ligne_commandeRepository ligne_commandeRepository;
 
+    /**
+     * Ajout d'un livre à un panier
+     * @param idPanier Identifiant du panier
+     * @param idLivre identifiant du livre
+     * @param quantite quantité du livre
+     * @return Retourne le panier en question
+     */
+    @Transactional
     public Panier addToPanier(String idPanier,String idLivre,int quantite){
 
         //Extraction des entités de la base de données
@@ -62,6 +71,12 @@ public class PanierServiceImpl implements IPanierService {
         return panierUsed;
     }
 
+    /**
+     * Ajout d'un panier à un visiteur
+     * @param idClient Identifiant du client
+     * @return Retourne le panier crée
+     */
+    @Transactional
     public Panier addPanier(String idClient){
 
         Client client = clientRepository.findById(idClient).get();
@@ -77,13 +92,24 @@ public class PanierServiceImpl implements IPanierService {
 
     }
 
-
+    /**
+     * Permet d'obtenir un panier en passant son identifiant
+     * @param idPanier Identifiant du panier à retourner
+     * @return Retourne un panier
+     */
+    @Transactional
     public Panier getPanierById(String idPanier)
     {
         Panier panierFromDb=panierRepository.findById(idPanier).get();
         return panierFromDb;
     }
 
+    /**
+     * Permet de chercher le panier d'un client spécifique
+     * @param idClient Identifiant du client
+     * @return Retourne un panier
+     */
+    @Transactional
     public Panier findPanierByClientIdClient(String idClient){
         Panier panier = panierRepository.findPanierByClientIdClient(idClient);
         return panier;

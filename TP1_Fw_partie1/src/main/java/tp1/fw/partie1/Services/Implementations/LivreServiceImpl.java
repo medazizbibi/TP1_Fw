@@ -45,20 +45,27 @@ public class LivreServiceImpl implements ILivreService {
         return bookToBeSaved;
     }
 
-    @Override
+    @Transactional
     public List<Livre> findAllByNbExemplaireIsGreaterThanEqual(int nb) {
         List<Livre> list= livreRepository.findAllByNbExemplaireIsGreaterThanEqual(nb);
 
         return list;
     }
 
-    @Override
+    @Transactional
     public Livre findById(String id) {
 
         Livre livre= livreRepository.findById(id).get();
         return livre;
     }
 
+    @Transactional
+    public Livre editLivre(Livre livre) {
+
+        livreRepository.save(livre);
+        return livre;
+    }
+    @Transactional
     public List<Livre> getLivresEnPromotion(){
         return livreRepository.findAllByNbExemplaireIsGreaterThanEqualAndEnPromotionIs(1,true);
     }
