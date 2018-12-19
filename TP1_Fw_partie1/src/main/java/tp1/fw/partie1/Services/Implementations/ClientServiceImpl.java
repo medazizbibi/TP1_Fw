@@ -18,6 +18,7 @@ public class ClientServiceImpl implements IClientService {
     @Autowired
     ClientRepository clientRepository;
 
+    @Override
     @Transactional
     public List<Client> getAllClients() {
         List<Client> result = new ArrayList<>();
@@ -28,6 +29,8 @@ public class ClientServiceImpl implements IClientService {
         return result;
     }
 
+    @Override
+    @Transactional
     public Client addClient(ModelClient modelClient){
 
         Client clientToBeAdded= new Client(
@@ -44,6 +47,8 @@ public class ClientServiceImpl implements IClientService {
 
     }
 
+    @Override
+    @Transactional
     public Client editClient(Client client){
 
         clientRepository.save(client);
@@ -51,6 +56,9 @@ public class ClientServiceImpl implements IClientService {
 
         return client1;
     }
+
+    @Override
+    @Transactional
     public void deleteClient(String idClient){
 
         clientRepository.deleteById(idClient);

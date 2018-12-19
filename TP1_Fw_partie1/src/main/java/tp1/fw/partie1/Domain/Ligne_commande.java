@@ -1,6 +1,8 @@
 package tp1.fw.partie1.Domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,12 +26,15 @@ public class Ligne_commande {
     private double prixVente;
 
     @ManyToOne
+    @JsonBackReference
     private Panier panier;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     private Commande commande;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     private Livre livre;
 
  }

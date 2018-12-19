@@ -1,5 +1,6 @@
 package tp1.fw.partie1.Domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,5 +26,6 @@ public class Promotion {
     private double pourcentage;
 
     @OneToOne
+    @JsonBackReference
     private Livre livre;
 }

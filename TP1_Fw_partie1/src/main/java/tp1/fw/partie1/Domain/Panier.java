@@ -1,5 +1,7 @@
 package tp1.fw.partie1.Domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,9 +26,11 @@ public class Panier {
     private double totalPanier ;
 
     @OneToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     private Client client;
 
-    @OneToMany(mappedBy = "panier")
+    @OneToMany(mappedBy = "panier",fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<Ligne_commande> ligne_commandes;
 
 

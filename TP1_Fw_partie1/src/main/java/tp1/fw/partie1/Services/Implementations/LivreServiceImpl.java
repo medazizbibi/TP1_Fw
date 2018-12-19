@@ -19,6 +19,7 @@ public class LivreServiceImpl implements ILivreService {
     @Autowired
     LivreRepository livreRepository;
 
+    @Override
     @Transactional
     public List<Livre> getAllLivres() {
         List<Livre> result = new ArrayList<>();
@@ -29,6 +30,7 @@ public class LivreServiceImpl implements ILivreService {
         return result;
     }
 
+    @Override
     @Transactional
     public Livre addLivre(ModelNouveauLivre nouveauLivre) {
 
@@ -45,6 +47,7 @@ public class LivreServiceImpl implements ILivreService {
         return bookToBeSaved;
     }
 
+    @Override
     @Transactional
     public List<Livre> findAllByNbExemplaireIsGreaterThanEqual(int nb) {
         List<Livre> list= livreRepository.findAllByNbExemplaireIsGreaterThanEqual(nb);
@@ -52,6 +55,7 @@ public class LivreServiceImpl implements ILivreService {
         return list;
     }
 
+    @Override
     @Transactional
     public Livre findById(String id) {
 
@@ -59,12 +63,15 @@ public class LivreServiceImpl implements ILivreService {
         return livre;
     }
 
+    @Override
     @Transactional
     public Livre editLivre(Livre livre) {
 
         livreRepository.save(livre);
         return livre;
     }
+
+    @Override
     @Transactional
     public List<Livre> getLivresEnPromotion(){
         return livreRepository.findAllByNbExemplaireIsGreaterThanEqualAndEnPromotionIs(1,true);

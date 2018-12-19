@@ -27,6 +27,7 @@ public class PanierServiceImpl implements IPanierService {
 
     @Autowired
     ClientRepository clientRepository;
+
     @Autowired
     Ligne_commandeRepository ligne_commandeRepository;
 
@@ -37,6 +38,7 @@ public class PanierServiceImpl implements IPanierService {
      * @param quantite quantité du livre
      * @return Retourne le panier en question
      */
+    @Override
     @Transactional
     public Panier addToPanier(String idPanier,String idLivre,int quantite){
 
@@ -76,6 +78,7 @@ public class PanierServiceImpl implements IPanierService {
      * @param idClient Identifiant du client
      * @return Retourne le panier crée
      */
+    @Override
     @Transactional
     public Panier addPanier(String idClient){
 
@@ -97,6 +100,7 @@ public class PanierServiceImpl implements IPanierService {
      * @param idPanier Identifiant du panier à retourner
      * @return Retourne un panier
      */
+    @Override
     @Transactional
     public Panier getPanierById(String idPanier)
     {
@@ -109,6 +113,7 @@ public class PanierServiceImpl implements IPanierService {
      * @param idClient Identifiant du client
      * @return Retourne un panier
      */
+    @Override
     @Transactional
     public Panier findPanierByClientIdClient(String idClient){
         Panier panier = panierRepository.findPanierByClientIdClient(idClient);

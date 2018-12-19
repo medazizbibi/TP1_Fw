@@ -33,6 +33,7 @@ public class CommandeServiceImpl implements ICommandeService {
     @Autowired
     PanierRepository panierRepository;
 
+    @Override
     @Transactional
     public List<Commande> getAllCommandes(){
 
@@ -44,6 +45,7 @@ public class CommandeServiceImpl implements ICommandeService {
         return result;
     }
 
+    @Override
     @Transactional
     public void validerPanier(String idPanier,String idClient){
         Panier panierAValider=panierRepository.findById(idPanier).get();

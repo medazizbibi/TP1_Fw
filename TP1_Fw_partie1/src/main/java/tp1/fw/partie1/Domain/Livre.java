@@ -1,6 +1,7 @@
 package tp1.fw.partie1.Domain;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,9 +31,11 @@ public class Livre {
 
     @OneToOne
     @NotFound(action = NotFoundAction.IGNORE)
+    @JsonManagedReference
     private Promotion promotion;
 
     @OneToMany(mappedBy = "livre")
+    @JsonManagedReference
     private List<Ligne_commande> ligne_commandes;
 
 

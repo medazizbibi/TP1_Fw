@@ -1,6 +1,8 @@
 package tp1.fw.partie1.Domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,10 +24,12 @@ public class Commande {
     private String date;
     private double montant;
 
-    @ManyToOne
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
     private Client client;
 
     @OneToMany(mappedBy = "commande")
+    @JsonManagedReference
     private List<Ligne_commande> ligne_commandes;
 
 
